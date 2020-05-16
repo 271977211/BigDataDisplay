@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="BigDataDisplay:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/BigDataDisplay_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="BigDataDisplay/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BigDataDisplay" />
+        </element>
+        <element id="directory" name="lib" />
+      </element>
+    </root>
+  </artifact>
+</component>
