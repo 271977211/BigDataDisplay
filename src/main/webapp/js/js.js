@@ -1,4 +1,4 @@
-﻿var host = "http://localhost:8090";
+﻿var host = "https://www.bigllke.xyz/bigdata";
 $(function () {
     echarts_1();
     echarts_2();
@@ -1019,6 +1019,22 @@ $(function () {
             myChart.resize();
         });
     }
+	
+	//加载人数
+	$.ajax({
+            type: "GET",
+            url: host + "/intermediateInformation",
+            dataType: "JSON",
+            async: false,
+            success: function (data) {
+                console.log(data);
+                expertsNum = data.expertsNum;
+                technologyNum = data.technologyNum;
+				$("#technologyNum").append(technologyNum);
+				$("#expertsNum").append(expertsNum);
+				
+            }
+        });
 
 
 })
