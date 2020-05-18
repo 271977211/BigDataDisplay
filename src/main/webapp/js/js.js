@@ -1,4 +1,4 @@
-﻿var host = "https://www.bigllke.xyz/bigdata";
+﻿var host ="https://www.bigllke.xyz/bigdata";
 $(function () {
     echarts_1();
     echarts_2();
@@ -12,7 +12,7 @@ $(function () {
     echarts_6();
 
     function echarts_1() {
-        var xAxis,yAxis;
+        var xAxis, yAxis;
         $.ajax({
             type: "GET",
             url: host + "/authority",
@@ -119,6 +119,10 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=user&authority=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -250,6 +254,10 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=expert&city=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -299,7 +307,7 @@ $(function () {
             },
             yAxis: [{
                 type: 'category',
-                inverse:true,
+                inverse: true,
                 axisLine: {
                     show: false
                 },
@@ -318,7 +326,7 @@ $(function () {
                 data: yAxis1
             }, {
                 type: 'category',
-                inverse:true,
+                inverse: true,
                 axisLine: {
                     show: false,
                 },
@@ -388,7 +396,7 @@ $(function () {
     }
 
     function echarts_6() {
-        var yAxis1, yAxis2, yAxis3,name1,name2,name3;
+        var yAxis1, yAxis2, yAxis3, name1, name2, name3;
         $.ajax({
             type: "GET",
             url: host + "/technologyNum",
@@ -397,12 +405,12 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 var year = parseInt(new Date().getFullYear());
-                yAxis1 = data[String(year-2)];
-                yAxis2 = data[String(year-1)];
+                yAxis1 = data[String(year - 2)];
+                yAxis2 = data[String(year - 1)];
                 yAxis3 = data[String(year)]
-                name1 = String(year-2)+"年";
-                name2 = String(year-1)+"年";
-                name3 = String(year)+"年";
+                name1 = String(year - 2) + "年";
+                name2 = String(year - 1) + "年";
+                name3 = String(year) + "年";
 
             },
             error: function (jqXHR) {
@@ -424,7 +432,7 @@ $(function () {
             },
             legend: {
                 top: '0%',
-                data: [name1,name2,name3],
+                data: [name1, name2, name3],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -659,6 +667,27 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            //parseInt()
+            var str = params.name
+            var beginage, endage;
+            if (str.indexOf("-") != -1) {
+                beginage = parseInt(str.substring(0, str.indexOf("-")));
+                endage = parseInt(str.substring(str.indexOf("-") + 1, str.length))
+                console.log(beginage)
+                console.log(endage)
+            } else if (str.indexOf("上") != -1) {
+                beginage = parseInt(str)
+                endage = 200;
+                console.log(beginage)
+            } else if (str.indexOf("下") != -1) {
+                beginage = 0
+                endage = parseInt(str);
+                console.log(endage)
+            }
+            window.open('./list/index.html?type=expert&beginage=' + beginage + '&endage=' + endage)
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -731,6 +760,10 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=expert&subject=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -801,6 +834,10 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=expert&profession=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -873,6 +910,10 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=result&subject=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -945,6 +986,10 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=result&profession=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
@@ -1015,28 +1060,30 @@ $(function () {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart.on('click', function (params) {
+            console.log(params.name)
+            window.open('./list/index.html?type=result&special=' + encodeURI(encodeURI(params.name)))
+        })
         window.addEventListener("resize", function () {
             myChart.resize();
         });
     }
-	
-	//加载人数
-	$.ajax({
-            type: "GET",
-            url: host + "/intermediateInformation",
-            dataType: "JSON",
-            async: false,
-            success: function (data) {
-                console.log(data);
-                expertsNum = data.expertsNum;
-                technologyNum = data.technologyNum;
-				$("#technologyNum").append(technologyNum);
-				$("#expertsNum").append(expertsNum);
-				
-            }
-        });
 
+    //加载人数
+    $.ajax({
+        type: "GET",
+        url: host + "/intermediateInformation",
+        dataType: "JSON",
+        async: false,
+        success: function (data) {
+            console.log(data);
+            expertsNum = data.expertsNum;
+            technologyNum = data.technologyNum;
+            $("#technologyNum").append(technologyNum);
+            $("#expertsNum").append(expertsNum);
 
+        }
+    });
 })
 
 
