@@ -19,12 +19,10 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 xAxis = data.location;
                 yAxis = data.nums;
             },
             error: function (jqXHR) {
-                alert("发生错误1：" + jqXHR.status);
             }
         });
 
@@ -120,7 +118,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=user&authority=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -137,12 +134,10 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 xAxis = data.provincial;
                 yAxis = data.nums;
             },
             error: function (jqXHR) {
-                alert("发生错误2：" + jqXHR.status);
             }
         });
 
@@ -255,7 +250,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=expert&city=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -271,12 +265,10 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 yAxis1 = data.technology;
                 yAxis2 = data.nums;
             },
             error: function (jqXHR) {
-                alert("发生错误6：" + jqXHR.status);
             }
         });
 
@@ -403,7 +395,6 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 var year = parseInt(new Date().getFullYear());
                 yAxis1 = data[String(year - 2)];
                 yAxis2 = data[String(year - 1)];
@@ -414,7 +405,6 @@ $(function () {
 
             },
             error: function (jqXHR) {
-                alert("发生错误6：" + jqXHR.status);
             }
         });
 
@@ -610,14 +600,12 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 pieData = data;
                 for (var i = 0; i < data.length; i++) {
                     names.push(data[i].name)
                 }
             },
             error: function (jqXHR) {
-                alert("发生错误：" + jqXHR.status);
             }
         });
 
@@ -642,6 +630,13 @@ $(function () {
                 }
             },
             legend: {
+                type: 'scroll',
+                orient: 'vertical',
+                pageIconColor: '#fff',
+                pageIconInactiveColor:'#0184d5',
+                pageTextStyle:{
+                    color:'#fff'
+                },
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -668,23 +663,17 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
-            //parseInt()
             var str = params.name
             var beginage, endage;
             if (str.indexOf("-") != -1) {
                 beginage = parseInt(str.substring(0, str.indexOf("-")));
                 endage = parseInt(str.substring(str.indexOf("-") + 1, str.length))
-                console.log(beginage)
-                console.log(endage)
             } else if (str.indexOf("上") != -1) {
                 beginage = parseInt(str)
                 endage = 200;
-                console.log(beginage)
             } else if (str.indexOf("下") != -1) {
                 beginage = 0
                 endage = parseInt(str);
-                console.log(endage)
             }
             window.open('./list/index.html?type=expert&beginage=' + beginage + '&endage=' + endage)
         })
@@ -702,21 +691,18 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 pieData = data;
                 for (var i = 0; i < data.length; i++) {
                     names.push(data[i].name)
                 }
             },
             error: function (jqXHR) {
-                alert("发生错误：" + jqXHR.status);
             }
         });
 
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('lpie_2'));
         option = {
-
             title: [{
                 text: '学科分布',
                 left: 'center',
@@ -724,7 +710,6 @@ $(function () {
                     color: '#fff',
                     fontSize: '16'
                 }
-
             }],
             tooltip: {
                 trigger: 'item',
@@ -734,7 +719,13 @@ $(function () {
                 }
             },
             legend: {
-
+                type: 'scroll',
+                orient: 'vertical',
+                pageIconColor: '#fff',
+                pageIconInactiveColor:'#0184d5',
+                pageTextStyle:{
+                    color:'#fff'
+                },
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -761,7 +752,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=expert&subject=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -778,14 +768,12 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 pieData = data;
                 for (var i = 0; i < data.length; i++) {
                     names.push(data[i].name)
                 }
             },
             error: function (jqXHR) {
-                alert("发生错误：" + jqXHR.status);
             }
         });
 
@@ -809,6 +797,13 @@ $(function () {
                 }
             },
             legend: {
+                type: 'scroll',
+                orient: 'vertical',
+                pageIconColor: '#fff',
+                pageIconInactiveColor:'#0184d5',
+                pageTextStyle:{
+                    color:'#fff'
+                },
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -835,7 +830,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=expert&profession=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -852,14 +846,12 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 pieData = data;
                 for (var i = 0; i < data.length; i++) {
                     names.push(data[i].name)
                 }
             },
             error: function (jqXHR) {
-                alert("发生错误：" + jqXHR.status);
             }
         });
 
@@ -884,7 +876,13 @@ $(function () {
                 }
             },
             legend: {
-
+                type: 'scroll',
+                orient: 'vertical',
+                pageIconColor: '#fff',
+                pageIconInactiveColor:'#0184d5',
+                pageTextStyle:{
+                    color:'#fff'
+                },
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -911,7 +909,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=result&subject=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -928,14 +925,12 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 pieData = data;
                 for (var i = 0; i < data.length; i++) {
                     names.push(data[i].name)
                 }
             },
             error: function (jqXHR) {
-                alert("发生错误：" + jqXHR.status);
             }
         });
 
@@ -960,7 +955,13 @@ $(function () {
                 }
             },
             legend: {
-
+                type: 'scroll',
+                orient: 'vertical',
+                pageIconColor: '#fff',
+                pageIconInactiveColor:'#0184d5',
+                pageTextStyle:{
+                    color:'#fff'
+                },
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -987,7 +988,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=result&profession=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -1004,14 +1004,12 @@ $(function () {
             dataType: "JSON",
             async: false,
             success: function (data) {
-                console.log(data);
                 pieData = data;
                 for (var i = 0; i < data.length; i++) {
                     names.push(data[i].name)
                 }
             },
             error: function (jqXHR) {
-                alert("发生错误：" + jqXHR.status);
             }
         });
 
@@ -1035,6 +1033,13 @@ $(function () {
                 }
             },
             legend: {
+                type: 'scroll',
+                orient: 'vertical',
+                pageIconColor: '#fff',
+                pageIconInactiveColor:'#0184d5',
+                pageTextStyle:{
+                    color:'#fff'
+                },
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -1061,7 +1066,6 @@ $(function () {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart.on('click', function (params) {
-            console.log(params.name)
             window.open('./list/index.html?type=result&special=' + encodeURI(encodeURI(params.name)))
         })
         window.addEventListener("resize", function () {
@@ -1076,7 +1080,6 @@ $(function () {
         dataType: "JSON",
         async: false,
         success: function (data) {
-            console.log(data);
             expertsNum = data.expertsNum;
             technologyNum = data.technologyNum;
             $("#technologyNum").append(technologyNum);
