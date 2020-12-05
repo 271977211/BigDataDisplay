@@ -1,4 +1,4 @@
-﻿var host ="https://www.bigllke.xyz/bigdata";
+﻿﻿var host = "https://www.bigllke.xyz/bigdata";
 $(function () {
     echarts_1();
     echarts_2();
@@ -633,9 +633,9 @@ $(function () {
                 type: 'scroll',
                 orient: 'vertical',
                 pageIconColor: '#fff',
-                pageIconInactiveColor:'#0184d5',
-                pageTextStyle:{
-                    color:'#fff'
+                pageIconInactiveColor: '#0184d5',
+                pageTextStyle: {
+                    color: '#fff'
                 },
                 top: '70%',
                 itemWidth: 10,
@@ -722,9 +722,9 @@ $(function () {
                 type: 'scroll',
                 orient: 'vertical',
                 pageIconColor: '#fff',
-                pageIconInactiveColor:'#0184d5',
-                pageTextStyle:{
-                    color:'#fff'
+                pageIconInactiveColor: '#0184d5',
+                pageTextStyle: {
+                    color: '#fff'
                 },
                 top: '70%',
                 itemWidth: 10,
@@ -800,9 +800,9 @@ $(function () {
                 type: 'scroll',
                 orient: 'vertical',
                 pageIconColor: '#fff',
-                pageIconInactiveColor:'#0184d5',
-                pageTextStyle:{
-                    color:'#fff'
+                pageIconInactiveColor: '#0184d5',
+                pageTextStyle: {
+                    color: '#fff'
                 },
                 top: '70%',
                 itemWidth: 10,
@@ -879,9 +879,9 @@ $(function () {
                 type: 'scroll',
                 orient: 'vertical',
                 pageIconColor: '#fff',
-                pageIconInactiveColor:'#0184d5',
-                pageTextStyle:{
-                    color:'#fff'
+                pageIconInactiveColor: '#0184d5',
+                pageTextStyle: {
+                    color: '#fff'
                 },
                 top: '70%',
                 itemWidth: 10,
@@ -958,9 +958,9 @@ $(function () {
                 type: 'scroll',
                 orient: 'vertical',
                 pageIconColor: '#fff',
-                pageIconInactiveColor:'#0184d5',
-                pageTextStyle:{
-                    color:'#fff'
+                pageIconInactiveColor: '#0184d5',
+                pageTextStyle: {
+                    color: '#fff'
                 },
                 top: '70%',
                 itemWidth: 10,
@@ -1036,9 +1036,9 @@ $(function () {
                 type: 'scroll',
                 orient: 'vertical',
                 pageIconColor: '#fff',
-                pageIconInactiveColor:'#0184d5',
-                pageTextStyle:{
-                    color:'#fff'
+                pageIconInactiveColor: '#0184d5',
+                pageTextStyle: {
+                    color: '#fff'
                 },
                 top: '70%',
                 itemWidth: 10,
@@ -1088,21 +1088,3 @@ $(function () {
         }
     });
 })
-
-
-
-		
-		
-		
-
-
-		
-
-
-
-
-
-
-
-
-
