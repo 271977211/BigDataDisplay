@@ -1,0 +1,157 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>新农人服务——北大荒集团专家技术可视化平台</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/comon0.css">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<script>
+    $(window).load(function () {
+        $(".loading").fadeOut()
+    })
+
+    $(document).ready(function () {
+        var whei = $(window).width()
+        $("html").css({fontSize: whei / 20})
+        $(window).resize(function () {
+            var whei = $(window).width()
+            $("html").css({fontSize: whei / 20})
+        });
+    });
+
+</script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script language="JavaScript" src="js/data.js"></script>
+<body>
+<div class="loading">
+    <div class="loadbox"><img src="picture/loading.gif"> 页面加载中...</div>
+</div>
+<div class="head">
+    <h1>新农人服务——北大荒集团专家技术可视化平台</h1>
+</div>
+<div class="mainbox">
+    <ul class="clearfix">
+        <li>
+            <div class="boxall" style="height: 3.2rem">
+                <div class="alltitle">管理局服务人数</div>
+                <div class="allnav" id="echart1">
+                    <div class="data">灌溉面积 (亩) ：
+                        <div id="index1"></div>
+                        万亩
+                    </div>
+                    <div class="data">闸门 (个) ：
+                        <div id="index2"></div>
+                        个
+                    </div>
+                    <div class="data">在线数 (个):
+                        <div id="index3"></div>
+                        <div class="unit">个</div>
+                        离线数 (个):
+                        <div id="index4"></div>
+                        <div class="unit">个</div>
+                    </div>
+                    <div class="data">在线率 (%):
+                        <div id="index6"></div>
+                        管理区 (个) :
+                        <div id="index7"></div>
+                        <div class="unit">个</div>
+                    </div>
+                </div>
+                <div class="boxfoot"></div>
+            </div>
+            <div class="boxall" style="height: 3.2rem">
+                <div style="height:100%; width: 100%;">
+                    <div class="sy" style="width: 50%;" id="pie1"></div>
+                    <div class="sy" style="width: 50%;" id="pie2"></div>
+                </div>
+                <div class="boxfoot"></div>
+            </div>
+            <table class="boxall" style="height: 3.2rem; width: 100%;">
+                <thead bgcolor="#0e4ae0" align="center">
+                <tr height="10">
+                    <th colspan="6"><img src="images/icon04.png"/> 监控列表</th>
+                </tr>
+                <tr class="aaa" align="center" id="monitor_title">
+                </tr>
+                </thead>
+
+                <tbody id="monitor_list">
+                </tbody>
+                <div class="boxfoot"></div>
+            </table>
+
+        </li>
+        <li>
+
+            <div class="map">
+                <div class="map1"><img src="picture/lbx.png"></div>
+                <div class="map2"><img src="picture/jt.png"></div>
+                <div class="map3"><img src="picture/map.png"></div>
+                <div class="map4" id="map_1"></div>
+            </div>
+        </li>
+        <li>
+            <div class="boxall" style="height: 6.2rem">
+                <p style="color: aqua;margin: 5px 0;">
+                    闸门名称：<input type="text" size="14" id="gate_input"/>
+                    <select name="test" id="gate_select">
+                    </select>
+                    <button class="b3 click_pop3" id="gate_button">确定</button>
+                </p>
+                <div>
+                    <table style="height: 3rem; width: 100%;" id="xxx">
+                        <thead>
+                        <tr height="10" bgcolor="#0e4ae0" align="center">
+                            <th colspan="6"><img src="images/icon04.png"/> 闸门列表</th>
+                        </tr>
+                        <tr class="aaa" bgcolor="#0e4ae0" align="center" id="gate_title"
+                            style="background-color:transparent; ">
+                        </tr>
+                        </thead>
+
+                        <tbody id="gate_list" style="overflow: hidden;">
+
+                        </tbody>
+                        <div class="boxfoot"></div>
+                    </table>
+                </div>
+                <div class="boxfoot">
+
+                </div>
+            </div>
+            <div class="boxall" style="height: 3.2rem">
+                <p style="color:aqua;margin: 5px 0;font-size: 16px;">
+                    闸门：
+                    <select id="gate_line"></select>
+                    显示：
+                    <select id="show_style">
+                        <option value="year">按年</option>
+                        <option value="month">按月</option>
+                    </select>
+                    月份：
+                    <select name="month" id="select_month" disabled="disabled">
+                    </select>
+                    <button id="enter_btn"
+                            style="margin-left: 10px;background-color: #00c0ef;color: white;border: #00cdff 2px solid;width: 50px;border-radius: 5px;">
+                        确定
+                    </button>
+                </p>
+                <div class="alltitle">开度曲线</div>
+                <div class="allnav" id="line_open"></div>
+                <div class="boxfoot"></div>
+            </div>
+            <div class="boxall" style="height:3.4rem">
+                <div class="alltitle">流量曲线</div>
+                <div class="allnav" id="line_stream"></div>
+                <div class="boxfoot"></div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="back"></div>
+<script type="text/javascript" src="js/line.js"></script>
+<script type="text/javascript" src="js/show.js"></script>
+</body>
+</html>

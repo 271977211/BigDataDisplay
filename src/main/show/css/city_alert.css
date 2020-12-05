@@ -1,0 +1,20 @@
+#city_alert{
+	display: block;
+	position:absolute;
+	top:50%;
+	left: 50%;
+	background-color: rgba(65,105,225,.7);
+	width: 7rem;
+	height: auto;
+	margin-left: -3.5rem; 
+	margin-top: -2.5rem; 
+	z-index: 30;
+	border: 1px solid rgba(25,186,139,.17);
+	padding: 0rem .4rem .4rem .15rem;
+	color: #fff;
+}
+.info{
+	color: #fff;
+	line-height: .3rem;
+	margin-top: .2rem;
+}
